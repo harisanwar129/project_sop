@@ -36,9 +36,9 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="<?= base_url() ?>assets/index2.html" class="logo">
+            <a href="<?= base_url('dashboard') ?>" class="logo">
                 <span class="logo-mini"><b>m</b>P</span>
-                <span class="logo-lg"><b>my</b>POS</span>
+                <span class="logo-lg"><b>MY</b>ANJING</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -88,7 +88,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Admin</span>
+                                <span class="hidden-xs"><?= $this->fungsi->user_login()->username ?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -96,8 +96,8 @@
                                     <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Haris Anwar - Web Developer
-                                        <small>Teknik Informatika</small>
+                                        <?= $this->fungsi->user_login()->name ?>
+                                        <small><?= $this->fungsi->user_login()->address ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -132,7 +132,7 @@
                         <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Admin</p>
+                        <p><?= ucfirst($this->fungsi->user_login()->username) ?></p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="#">
+                        <a href="<?= site_url('dashboard') ?>">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                         </a>
                     </li>
@@ -197,7 +197,7 @@
                     </li>
                     <?php if ($this->session->userdata('level') == 1) { ?>
                         <li class="header">SETTING</li>
-                        <li><a href=""><i class="fa fa-user"></i><span>Users</span></a></li>
+                        <li><a href="<?= site_url('user') ?>"><i class="fa fa-user"></i><span>Users</span></a></li>
                     <?php } ?>
                 </ul>
             </section>
