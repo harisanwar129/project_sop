@@ -25,11 +25,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Username</th>
-                            <th>Name</th>
-                            <th>Address</th>
+                            <th>Pengguna</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
                             <th>Level</th>
-                            <th class="text-center" width="160">Actions</th>
+                            <th class="text-center" width="160">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,12 +42,15 @@
                                 <td><?= $data->address ?></td>
                                 <td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
                                 <td class="text-center" width="160">
-                                    <a href="<?= site_url('user/edit') ?>" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-pencil"></i> Ubah
-                                    </a>
-                                    <a href="<?= site_url('user/hapus') ?>" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-trash"></i> Hapus
-                                    </a>
+                                    <form action="<?= site_url('user/del') ?>" method="post">
+                                        <a href="<?= site_url('user/edit/' . $data->user_id) ?>" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-pencil"></i> Ubah
+                                        </a>
+                                        <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+                                        <button onclick="return confirm('apakah anda yakin?')" class="btn btn-danger btn-xs">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php
