@@ -162,8 +162,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-users"></i> <span>Customer</span>
+                        <a href="<?= site_url('customer') ?>">
+                            <i class="fa fa-users"></i> <span>Konsumen</span>
                         </a>
                     </li>
                     <li class="treeview">
