@@ -15,13 +15,13 @@
             <h3 class="box-title">Data Konsumen</h3>
             <div class="pull-right">
                 <a href="<?= site_url('customer/add') ?>" class="btn btn-primary btn-flat">
-                    <i class="fa fa-user-plus"></i> Tambah
+                    <i class="fa fa-user-plus"></i> Tambahkan
                 </a>
             </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped" id="tabel1">
                 <thead>
                     <tr>
                         <th>#</th>
