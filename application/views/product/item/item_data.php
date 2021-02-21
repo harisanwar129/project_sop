@@ -27,6 +27,11 @@
                         <th>#</th>
                         <th>Barcode</th>
                         <th>Nama </th>
+                        <th>Kategori </th>
+                        <th>Satuan </th>
+                        <th>Harga </th>
+                        <th>Persediaan </th>
+                        <th>Gambar </th>
                         <th class="text-center" width="160">Aksi</th>
                     </tr>
                 </thead>
@@ -35,8 +40,22 @@
                     foreach ($row->result() as $key => $data) { ?>
                         <tr>
                             <td style="width: 5%;"><?= $no++ ?>.</td>
-                            <td><?= $data->barcode ?></td>
+                            <td>
+                                <?= $data->barcode ?>
+                                <a href="<?= site_url('item/barcode_qrcode/' . $data->item_id) ?>" class="btn btn-default btn-xs">
+                                    <i class="fa fa-barcode"></i> Ubah
+                                </a>
+                            </td>
                             <td><?= $data->name ?></td>
+                            <td><?= $data->category_name ?></td>
+                            <td><?= $data->unit_name ?></td>
+                            <td><?= $data->price ?></td>
+                            <td><?= $data->stock     ?></td>
+                            <td>
+                                <?php if ($data->image != null) { ?>
+                                    <img src="<?= base_url('uploads/product/' . $data->image) ?>" style="width:100px">
+                                <?php } ?>
+                            </td>
                             <td class="text-center" width="160">
 
                                 <a href="<?= site_url('item/edit/' . $data->item_id) ?>" class="btn btn-primary btn-xs">
