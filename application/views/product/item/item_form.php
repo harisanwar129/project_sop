@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <?php echo form_open_multipart('item/process') ?>
-                    <!-- <form action="<?= site_url('item/process') ?>" method="post"> -->
+
                     <div class="form-group">
                         <label for="nama">Barcode *</label>
                         <input type="hidden" name="id" value="<?= $row->item_id ?>">
@@ -71,7 +71,7 @@
                         </button>
                         <button type="reset" class="btn btn-primary">Ulangi</button>
                     </div>
-                    <!-- </form> -->
+
                     <?php echo form_close() ?>
                 </div>
             </div>
