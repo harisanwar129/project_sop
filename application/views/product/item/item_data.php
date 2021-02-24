@@ -42,8 +42,9 @@
                             <td style="width: 5%;"><?= $no++ ?>.</td>
                             <td>
                                 <?= $data->barcode ?>
+                                <br>
                                 <a href="<?= site_url('item/barcode_qrcode/' . $data->item_id) ?>" class="btn btn-default btn-xs">
-                                    <i class="fa fa-barcode"></i> Ubah
+                                    Barcode <i class="fa fa-barcode"></i>
                                 </a>
                             </td>
                             <td><?= $data->name ?></td>
