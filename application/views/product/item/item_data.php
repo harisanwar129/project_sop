@@ -36,8 +36,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1;
-                    foreach ($row->result() as $key => $data) { ?>
+                    <!-- <?php $no = 1;
+                            foreach ($row->result() as $key => $data) { ?>
                         <tr>
                             <td style="width: 5%;"><?= $no++ ?>.</td>
                             <td>
@@ -69,9 +69,40 @@
                             </td>
                         </tr>
                     <?php
-                    } ?>
+                            } ?> -->
                 </tbody>
             </table>
         </div>
     </div>
 </section>
+
+
+<script>
+    $(document).ready(function() {
+        $('#tabel1').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('item/get_ajax') ?>",
+                "type": "POST"
+            },
+            "columnDefs": [{
+                    "targets": [5, 6],
+                    "className": 'text-right'
+                },
+                {
+                    "targets": [7, -1],
+                    "className": 'text-center'
+                },
+                {
+                    "targets": [7, -1],
+                    "className": false
+                }
+
+
+            ],
+            "order": []
+
+        })
+    })
+</script>

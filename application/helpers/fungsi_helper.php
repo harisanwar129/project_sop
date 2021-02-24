@@ -28,3 +28,7 @@ function check_admin()
         redirect('dashboard');
     }
 }
+function indo_currency($value)
+{
+    return 'Rp. ' . number_format($value, 0, ",", ".");
+}

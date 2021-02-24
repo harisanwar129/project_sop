@@ -204,6 +204,7 @@
                 </ul>
             </section>
         </aside>
+        <script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -267,7 +268,6 @@
         </footer>
     </div>
     <!-- jQuery 3 -->
-    <script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- SlimScroll -->

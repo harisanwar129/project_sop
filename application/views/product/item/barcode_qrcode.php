@@ -40,12 +40,16 @@
         <!-- /.box-header -->
         <div class="box-body">
             <?php
-            $qrCode = new Endroid\QrCode\QrCode('12345');
+            $qrCode = new Endroid\QrCode\QrCode($row->barcode);
             $qrCode->writeFile('uploads/qr-code/item-' . $row->barcode . '.png');
             ?>
             <img src="<?= base_url('uploads/qr-code/item-' . $row->barcode . '.png') ?>" style="width:200px">
             <br>
             <?= $row->barcode ?>
+            <br><br>
+            <a href="<?= site_url('item/qrcode_print/' . $row->item_id) ?>" target="_blank" class="btn btn-warning btn-sm">
+                <i class="fa fa-print"></i> Cetak
+            </a>
         </div>
     </div>
 </section>
